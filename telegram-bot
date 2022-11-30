@@ -1,0 +1,5 @@
+import telegram
+
+bot = telegram.Bot('5840879171:AAFjaF1LnoeCwkbDLw5yMTYyuOaiWl-Uttk')
+print(bot.get_me())
+bot.send_message(text='привет', chat_id="-1001676726134")
