@@ -1,6 +1,17 @@
 import telegram
 
-bot = telegram.Bot('5840879171:AAFjaF1LnoeCwkbDLw5yMTYyuOaiWl-Uttk')
-print(bot.get_me())
-with open('images/0nasa.jpg', 'rb') as photo:
-    bot.send_photo(photo=photo, chat_id="-1001676726134")
+import os
+
+import random
+
+from time import sleep
+
+
+filesindir = os.listdir("images")
+
+while True:
+    filename = random.choice(filesindir)
+    file_path = os.path.join('images', filename)
+    with open(file_path, 'rb') as photo:
+        bot.send_photo(photo=photo, chat_id="-1001676726134")
+        sleep(11440)
