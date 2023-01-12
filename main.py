@@ -24,12 +24,6 @@ def download(url, file_path, params=None):
 
 if __name__ == '__main__':
     load_dotenv()
-    api_key = os.environ["API_KEY"]
     os.makedirs('images', exist_ok=True)
     fetch_nasa_epic(api_key)
-
-
-
-
-
 
