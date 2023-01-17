@@ -8,9 +8,9 @@ import requests
 
 from main import get_extension
 
-def fetch_nasa_apod(api_key):
+def fetch_nasa_apod(nasa_api_key,count):
     url = 'https://api.nasa.gov/planetary/apod'
-    payload = {'api_key': api_key,'count':30}
+    payload = {'nasa_api_key': nasa_api_key,'count':count}
     response = requests.get(url, params=payload)
     response.raise_for_status()
 
@@ -23,6 +23,7 @@ def fetch_nasa_apod(api_key):
 
 if __name__ == '__main__':
     load_dotenv()
-    api_key = os.environ["API_KEY"]
+    nasa_api_key = os.environ["NASA_API_KEY"]
+    photo_quantity = os.getenv("FOTO_QUANTITY",30)
     os.makedirs('images', exist_ok=True)
-    fetch_nasa_apod(api_key)
+    fetch_nasa_apod(nasa_api_key)
