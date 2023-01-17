@@ -8,7 +8,7 @@ from pprint import pprint
 
 from dotenv import load_dotenv
 
-from main import download
+from tools import download
 
 def fetch_nasa_epic(nasa_api_key):
     url = "https://api.nasa.gov/EPIC/api/natural/images/"

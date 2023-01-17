@@ -2,7 +2,7 @@ import os
 
 import requests
 
-from main import download
+from tools import download
 
 from dotenv import load_dotenv
 

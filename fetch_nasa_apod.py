@@ -1,4 +1,4 @@
-from main import download
+from tools import download
 
 import os
 
@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 import requests
 
-from main import get_extension
+from tools import get_extension
 
 def fetch_nasa_apod(nasa_api_key,count):
     url = 'https://api.nasa.gov/planetary/apod'
