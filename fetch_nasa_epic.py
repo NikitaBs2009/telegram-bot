@@ -10,9 +10,9 @@ from dotenv import load_dotenv
 
 from main import download
 
-def fetch_nasa_epic(api_key):
+def fetch_nasa_epic(nasa_api_key):
     url = "https://api.nasa.gov/EPIC/api/natural/images/"
-    payload = {'api_key': api_key}
+    payload = {'nasa_api_key': nasa_api_key}
     response = requests.get(url, params=payload)
     response.raise_for_status()
     for image in response.json():
@@ -23,6 +23,6 @@ def fetch_nasa_epic(api_key):
         download(image_link, image_path, params=payload)
 if __name__ == '__main__':
     load_dotenv()
-    api_key = os.environ["NASA_API_KEY"]
+    nasa_api_key = os.environ["NASA_API_KEY"]
     os.makedirs('images', exist_ok=True)
-    fetch_nasa_epic(api_key)
+    fetch_nasa_epic(nasa_api_key)
