@@ -12,6 +12,7 @@ def fetch_spacex_last_launch(launch_id):
     response.raise_for_status()
     image_links = response.json()["links"]["flickr"]["original"]
     for number, image_link in enumerate(image_links):
+        file_path = os.path.join("images",f"{number} spacex.jpg")
         download(image_link, file_path)
 if __name__ == '__main__':
     load_dotenv()
