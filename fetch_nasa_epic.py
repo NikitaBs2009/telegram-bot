@@ -4,15 +4,13 @@ from datetime import datetime
 
 import requests
 
-from pprint import pprint
-
 from dotenv import load_dotenv
 
 from tools import download
 
 def fetch_nasa_epic(nasa_api_key):
     url = "https://api.nasa.gov/EPIC/api/natural/images/"
-    payload = {'nasa_api_key': nasa_api_key}
+    payload = {'api_key': nasa_api_key}
     response = requests.get(url, params=payload)
     response.raise_for_status()
     for image in response.json():
