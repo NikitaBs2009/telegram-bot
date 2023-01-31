@@ -12,7 +12,7 @@ if __name__ == '__main__':
     load_dotenv()
     tg_token = os.getenv("TG_TOKEN")
     chat_id = os.getenv("CHAT_ID")
-    bot = telegram.bot(token=tg_token)
+    bot = telegram.Bot(token=tg_token)
     filesindir = os.listdir("images")
 
     while True:
