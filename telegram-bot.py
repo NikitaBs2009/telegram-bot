@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 if __name__ == '__main__':
     load_dotenv()
     tg_token = os.getenv("TG_TOKEN")
-    chat_id = os.getenv("CHAT_ID")
+    chat_id = os.getenv("TG_CHAT_ID")
     bot = telegram.Bot(token=tg_token)
     filesindir = os.listdir("images")
 
