@@ -1,3 +1,5 @@
+import logging
+
 import telegram
 
 import os
@@ -10,17 +12,18 @@ from dotenv import load_dotenv
 
 if __name__ == '__main__':
     load_dotenv()
-    os.environ['TG_TOKEN']
+    tg_chat_id = os.environ['TG_CHAT_ID']
     tg_token = os.environ['TG_TOKEN']
-    chat_id = os.environ['TG_CHAT_ID']
     bot = telegram.Bot(token=tg_token)
     filesindir = os.listdir("images")
 
     while True:
-        filename = random.choice(filesindir)
-        file_path = os.path.join('images', filename)
-        with open(file_path, 'rb') as photo:
-            bot.send_photo(chat_id, photo=photo)
+        try:
+            filename = random.choice(filesindir)
+            file_path = os.path.join('images', filename)
+            with open(file_path, 'rb') as photo:
+                bot.send_photo(tg_chat_id, photo=photo)
             sleep(11440)
-
-
+        except telegram.error.NetworkError:
+            logging.exception('разрыв соеденения')
+            sleep(10)
