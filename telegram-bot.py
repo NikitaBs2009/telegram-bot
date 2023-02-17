@@ -1,13 +1,9 @@
 import logging
-
-import telegram
-
 import os
-
 import random
-
 from time import sleep
 
+import telegram
 from dotenv import load_dotenv
 
 if __name__ == '__main__':
