@@ -21,5 +21,5 @@ if __name__ == '__main__':
                 bot.send_photo(tg_chat_id, photo=photo)
             sleep(11440)
         except telegram.error.NetworkError:
-            logging.exception('разрыв соеденения')
+            logging.exception('разрыв соединения')
             sleep(10)

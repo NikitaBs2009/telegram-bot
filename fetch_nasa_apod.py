@@ -15,7 +15,7 @@ def fetch_nasa_apod(nasa_api_key, count):
 
     for number, image in enumerate(response.json()):
         if image['media_type'] == "image":
-            link=image["hdurl"]
+            link = image["hdurl"]
             file_path = os.path.join('images', f"{number}nasa{get_extension(link)}")
             download(link, file_path)
 
